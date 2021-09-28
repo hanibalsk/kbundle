@@ -1,5 +1,7 @@
 [![](https://jitpack.io/v/hanibalsk/kbundle.svg)](https://jitpack.io/#hanibalsk/kbundle)
 
+[![Android CI](https://github.com/hanibalsk/kbundle/actions/workflows/android.yml/badge.svg)](https://github.com/hanibalsk/kbundle/actions/workflows/android.yml)
+
 # kBundle (ANDROID)
 
 Better, type safe version of creating bundle.
