@@ -2,6 +2,8 @@
 
 [![Android CI](https://github.com/hanibalsk/kbundle/actions/workflows/android.yml/badge.svg)](https://github.com/hanibalsk/kbundle/actions/workflows/android.yml)
 
+[![Maven Central][mavenbadge-svg]][mavencentral]
+
 # kBundle (ANDROID)
 
 Better, type safe version of creating bundle.
