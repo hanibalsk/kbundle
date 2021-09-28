@@ -8,6 +8,12 @@
 
 Better, type safe version of creating bundle.
 
+### Gradle
+
+```gradle
+implementation "sk.32bit:kbundle:0.1.1"
+```
+
 ### Usage
 
 ```gradle
