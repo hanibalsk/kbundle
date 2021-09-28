@@ -1,0 +1,43 @@
+apply from: rootProject.file("gradle/versions_plugin_config.gradle")
+
+buildscript {
+  apply from: rootProject.file("dependencies.gradle")
+
+  repositories {
+    google()
+    gradlePluginPortal()
+    mavenCentral()
+    jcenter()
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath deps.gradle_plugins.android
+    classpath deps.gradle_plugins.bintray_release
+    classpath deps.gradle_plugins.kotlin
+    classpath deps.gradle_plugins.spotless
+    classpath deps.gradle_plugins.versions
+  }
+}
+
+allprojects {
+  repositories {
+    google()
+    mavenCentral()
+    jcenter()
+  }
+}
+
+subprojects {
+  tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+      jvmTarget = 1.8
+      freeCompilerArgs += ["-module-name", project.path.replace(':', '')]
+      // needed for use of Experimental annotation. used in EnhancedMediaPlayerController
+      freeCompilerArgs += "-Xuse-experimental=kotlin.Experimental"
+      freeCompilerArgs += "-Xopt-in=kotlin.ExperimentalStdlibApi"
+      freeCompilerArgs += '-Xjvm-default=enable'
+    }
+  }
+}

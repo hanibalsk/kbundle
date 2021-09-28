@@ -1,0 +1,11 @@
+ext.library = [
+    min_sdk: 19,
+    compile_sdk: 30,
+
+    publish_group: "three.two.bit.kbundle",
+    publish_version: "0.1.0",
+    publish_version_code: 1,
+
+    description: "Better, type safe version of creating bundle.",
+    website: "https://github.com/hanibalsk/kbundle"
+]
