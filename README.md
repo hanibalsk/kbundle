@@ -1,6 +1,28 @@
-# kBundle(ANDROID)
+[![](https://jitpack.io/v/hanibalsk/kbundle.svg)](https://jitpack.io/#hanibalsk/kbundle)
+
+# kBundle (ANDROID)
 
 Better, type safe version of creating bundle.
+
+### Usage
+
+```gradle
+val bundle = bundle {
+  "IntKey" to 4
+  "LongKey" to 7L
+  "StringKey" to "Some text"
+  putAll(existingBundle) // Adds values from existing bundle
+}
+```
+
+```gradle
+val bundle = bundle(existingBundle) {
+  "IntKey" to 4
+  "LongKey" to 7L
+  "StringKey" to "Some text"
+}
+```
+
 
 ### Code Formatting
 

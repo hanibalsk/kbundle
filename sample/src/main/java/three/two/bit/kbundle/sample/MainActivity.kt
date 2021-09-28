@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
       "IntKey" to 4
       "LongKey" to 7L
       "StringKey" to "Some text"
+      putAll(Bundle())
     }
 
     println(bundle)
