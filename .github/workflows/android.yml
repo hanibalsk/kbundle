@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - '*'
+jdk:
+  - openjdk11
 jobs:
   build:
     runs-on: ubuntu-latest
