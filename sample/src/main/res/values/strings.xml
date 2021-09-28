@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">kBundle</string>
+    <string name="go_text">Go!</string>
+    <string name="your_name">Your name…</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>
