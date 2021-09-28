@@ -2,10 +2,12 @@ ext.library = [
     min_sdk: 19,
     compile_sdk: 30,
 
-    publish_group: "three.two.bit.kbundle",
-    publish_version: "0.1.0",
-    publish_version_code: 1,
+    publish_group: "sk.32bit",
+    publish_version: "0.1.1",
+    publish_version_code: 2,
 
     description: "Better, type safe version of creating bundle.",
-    website: "https://github.com/hanibalsk/kbundle"
+    website: "https://github.com/hanibalsk/kbundle",
+    scm1: "scm:git@github.com:hanibalsk/kbundle.git",
+    scm2: "scm:git@github.com:hanibalsk/kbundle.git"
 ]

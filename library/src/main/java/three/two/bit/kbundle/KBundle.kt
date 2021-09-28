@@ -87,7 +87,7 @@ interface BundleBuilder {
   infix fun String.to(value: CharArray?)
 
   /** Key to [CharSequence] value */
-  infix fun String.to(value: CharSequence?)
+  infix fun String.to(value: CharSequence)
 
   /** Key to [CharSequence] array value */
   infix fun String.to(value: Array<CharSequence>?)
@@ -205,7 +205,7 @@ internal value class BundleBuilderImpl(val bundle: Bundle = Bundle()) : BundleBu
     bundle.putCharArray(this, value)
   }
 
-  override fun String.to(value: CharSequence?) {
+  override fun String.to(value: CharSequence) {
     bundle.putCharSequence(this, value)
   }
 

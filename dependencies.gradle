@@ -8,7 +8,8 @@ ext.deps = [
         spotless: "com.diffplug.spotless:spotless-plugin-gradle:5.15.2",
         versions: "com.github.ben-manes:gradle-versions-plugin:0.39.0",
         bintray_release: "com.novoda:bintray-release:0.9.2",
-        kotlin: "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
+        kotlin: "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31",
+        nexus: "com.vanniktech:gradle-maven-publish-plugin:0.18.0"
     ],
 
     kotlin: [

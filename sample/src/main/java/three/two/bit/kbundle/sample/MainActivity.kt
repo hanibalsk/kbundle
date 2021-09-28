@@ -24,10 +24,12 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
+    val s: String? = null
     val bundle = bundle {
       "IntKey" to 4
       "LongKey" to 7L
-      "StringKey" to "Some text"
+      "StringKey" to s
+      "StringKey2" to "S"
       putAll(Bundle())
     }
 
