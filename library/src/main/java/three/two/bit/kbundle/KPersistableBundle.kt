@@ -70,7 +70,6 @@ interface PersistableBundleBuilder {
   /** Key to [BooleanArray] value */
   @RequiresApi(Build.VERSION_CODES.LOLLIPOP_MR1)
   infix fun String.to(value: BooleanArray?)
-
 }
 
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -125,5 +124,4 @@ internal value class PersistableBundleBuilderImpl constructor(
   override fun String.to(value: BooleanArray?) {
     PersistableBundle.putBooleanArray(this, value)
   }
-
 }
