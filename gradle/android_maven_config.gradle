@@ -2,5 +2,5 @@ apply plugin: "maven-publish"
 apply plugin: "com.vanniktech.maven.publish"
 apply from: rootProject.file("library_info.gradle")
 
-group = library.publish_group
+group = library.publish_group_maven
 version = library.publish_version
