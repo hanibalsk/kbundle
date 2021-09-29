@@ -3,6 +3,7 @@ ext.library = [
     compile_sdk: 30,
 
     publish_group: "three.two.bit",
+    publish_group_maven: "sk.32bit",
     publish_version: "0.1.1",
     publish_version_code: 2,
 

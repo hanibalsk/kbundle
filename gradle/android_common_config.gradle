@@ -3,7 +3,7 @@ apply from: rootProject.file("dependencies.gradle")
 apply from: rootProject.file("gradle/spotless_plugin_config.gradle")
 
 apply from: rootProject.file("library_info.gradle")
-ext.module_package_id = "${library.publish_group}.${module_name}"
+ext.module_package_id = "${library.publish_group_maven}.${module_name}"
 
 android {
   compileSdkVersion library.compile_sdk
