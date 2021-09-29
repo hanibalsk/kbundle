@@ -1,13 +1,8 @@
-[![](https://jitpack.io/v/hanibalsk/kbundle.svg)](https://jitpack.io/#hanibalsk/kbundle)
-
-[![Android CI](https://github.com/hanibalsk/kbundle/actions/workflows/android.yml/badge.svg)](https://github.com/hanibalsk/kbundle/actions/workflows/android.yml)
-
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/sk.32bit/kbundle/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/sk.32bit/kbundle)
-Maven Central
-
-License This project is licensed under MIT license.
+License This project is licensed under Apache 2.0 license.
 
 # kBundle (ANDROID)
+
+[![](https://jitpack.io/v/hanibalsk/kbundle.svg)](https://jitpack.io/#hanibalsk/kbundle) [![Android CI](https://github.com/hanibalsk/kbundle/actions/workflows/android.yml/badge.svg)](https://github.com/hanibalsk/kbundle/actions/workflows/android.yml) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/sk.32bit/kbundle/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/sk.32bit/kbundle)
 
 Better, type safe version of creating bundle.
 
