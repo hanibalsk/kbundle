@@ -1,5 +1,5 @@
 /**
- * Designed and developed by Martin Janči (mj.janci@gmail.com)
+ * Designed and developed by Martin Janči (m.janci@32bit.sk)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ import androidx.annotation.RequiresApi
  * Builds PersistableBundle convenient way. Uses inline class to spare allocation.
  */
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-fun persistablePersistableBundle(
+fun persistableBundle(
   PersistableBundle: PersistableBundle? = null,
   configure: PersistableBundleBuilder.() -> Unit
 ): PersistableBundle =

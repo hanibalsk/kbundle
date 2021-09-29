@@ -1,5 +1,5 @@
 /**
- * Designed and developed by Martin Janči (mj.janci@gmail.com)
+ * Designed and developed by Martin Janči (m.janci@32bit.sk)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,13 @@
  */
 package three.two.bit.kbundle.sample
 
+import android.graphics.Rect
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import three.two.bit.kbundle.bundle
+import three.two.bit.kbundle.instanceArgument
+import three.two.bit.kbundle.requireArgument
 
 class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,5 +38,52 @@ class MainActivity : AppCompatActivity() {
     }
 
     println(bundle)
+
+    val fragment = CustomFragment.newInstance(
+      1,
+      "text",
+      Rect(5, 3, 5, 3),
+    )
+
+    println(fragment)
+  }
+}
+
+class CustomFragment : Fragment() {
+
+  private val intParameter by requireArgument<Int>()
+  private val stringWithDefaultParameter by requireArgument<String>("default text")
+  private var longOptionalParameter by instanceArgument<Long>()
+
+  // Error throw, when missing
+  private val parcelableParameter by requireArgument<Rect>("parcelableParameter parameter is required")
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+
+    println("intParameter is $intParameter")
+    println("stringWithDefaultParameter is $stringWithDefaultParameter")
+    println("longOptionalParameter is $longOptionalParameter")
+    println("parcelableParameter is $parcelableParameter")
+
+    // Parameter can be changed
+    longOptionalParameter = 22L
+  }
+
+  companion object {
+
+    fun newInstance(
+      intParameter: Int,
+      stringWithDefaultParameter: String,
+      parcelableParameter: Rect,
+      longOptionalParameter: Long? = null,
+    ) = CustomFragment().also { fragment ->
+      fragment.arguments = bundle {
+        fragment::intParameter.name to intParameter
+        fragment::stringWithDefaultParameter.name to stringWithDefaultParameter
+        fragment::longOptionalParameter.name to longOptionalParameter
+        fragment::parcelableParameter.name to parcelableParameter
+      }
+    }
   }
 }

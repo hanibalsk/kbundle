@@ -9,10 +9,12 @@ Better, type safe version of creating bundle.
 ### Gradle
 
 ```gradle
-implementation "sk.32bit:kbundle:0.1.2"
+implementation "sk.32bit:kbundle:0.2.0"
 ```
 
 ### Usage
+
+## Bundle creation
 
 ```gradle
 val bundle = bundle {
@@ -28,6 +30,59 @@ val bundle = bundle(existingBundle) {
   "IntKey" to 4
   "LongKey" to 7L
   "StringKey" to "Some text"
+}
+```
+
+## Persistable bundle creation
+
+```gradle
+val persistableBundle = persistableBundle(existingBundle) {
+  "IntKey" to 4
+  "LongKey" to 7L
+  "StringKey" to "Some text"
+}
+```
+
+### Fragment with bundle arguments
+
+```gradle
+class CustomFragment : Fragment() {
+
+  private val intParameter by requireArgument<Int>()
+  private val stringWithDefaultParameter by requireArgument<String>("default text")
+  private var longOptionalParameter by instanceArgument<Long>()
+
+  // Error throw, when missing
+  private val parcelableParameter by requireArgument<Rect>("parcelableParameter parameter is required")
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+
+    println("intParameter is $intParameter")
+    println("stringWithDefaultParameter is $stringWithDefaultParameter")
+    println("longOptionalParameter is $longOptionalParameter")
+    println("parcelableParameter is $parcelableParameter")
+
+    // Parameter can be changed
+    longOptionalParameter = 22L
+  }
+
+  companion object {
+
+    fun newInstance(
+      intParameter: Int,
+      stringWithDefaultParameter: String,
+      parcelableParameter: Rect,
+      longOptionalParameter: Long? = null,
+    ) = CustomFragment().also { fragment ->
+      fragment.arguments = bundle {
+        fragment::intParameter.name to intParameter
+        fragment::stringWithDefaultParameter.name to stringWithDefaultParameter
+        fragment::longOptionalParameter.name to longOptionalParameter
+        fragment::parcelableParameter.name to parcelableParameter
+      }
+    }
+  }
 }
 ```
 

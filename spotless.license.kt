@@ -1,5 +1,5 @@
 /**
- * Designed and developed by Martin Janči (mj.janci@gmail.com)
+ * Designed and developed by Martin Janči (m.janci@32bit.sk)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
